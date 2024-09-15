@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        .slide {
+            flex: 0 0 33.333%; /* Show 3 slides at a time */
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+        .prev-button, .next-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev-button { left: 10px; }
+        .next-button { right: 10px; }
+    </style>
+</head>
+<body>
+<section class="bg-sky-400 flex mx-10 mt-10 slider-container">
+    <button class="prev-button">Prev</button>
+    <div class="slider-track">
+        <div class="slide p-5 bg-sky-300 m-5 rounded-xl">
+            <img src="" alt="">
+            <h1 class="text-3xl font-bold my-2">This is heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores blanditiis ad repellat perferendis quo pariatur nesciunt. Facilis, voluptatem cumque, quisquam doloremque nemo excepturi amet maiores earum beatae corrupti, sunt eos?</p>
+            <button>See more</button>
+        </div>
+        <div class="slide p-5 bg-sky-300 m-5 rounded-xl">
+            <img src="" alt="">
+            <h1 class="text-3xl font-bold my-2">This is heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores blanditiis ad repellat perferendis quo pariatur nesciunt. Facilis, voluptatem cumque, quisquam doloremque nemo excepturi amet maiores earum beatae corrupti, sunt eos?</p>
+            <button>See more</button>
+        </div>
+        <div class="slide p-5 bg-sky-300 m-5 rounded-xl">
+            <img src="" alt="">
+            <h1 class="text-3xl font-bold my-2">This is heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores blanditiis ad repellat perferendis quo pariatur nesciunt. Facilis, voluptatem cumque, quisquam doloremque nemo excepturi amet maiores earum beatae corrupti, sunt eos?</p>
+            <button>See more</button>
+        </div>
+        <div class="slide p-5 bg-sky-300 m-5 rounded-xl">
+            <img src="" alt="">
+            <h1 class="text-3xl font-bold my-2">This is heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores blanditiis ad repellat perferendis quo pariatur nesciunt. Facilis, voluptatem cumque, quisquam doloremque nemo excepturi amet maiores earum beatae corrupti, sunt eos?</p>
+            <button>See more</button>
+        </div>
+    </div>
+    <button class="next-button">Next</button>
+</section>
+
+<script>
+    const track = document.querySelector('.slider-track');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    const slidesToShow = 3; // Number of slides to show at once
+    const slideWidth = slides[0].offsetWidth;
+
+    function updateSlidePosition() {
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex++;
+        if (currentIndex > slides.length - slidesToShow) {
+            currentIndex = 0; // Go back to the first slide
+        }
+        updateSlidePosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - slidesToShow; // Go to the last slide
+        }
+        updateSlidePosition();
+    });
+
+    window.addEventListener('resize', () => {
+        updateSlidePosition();
+    });
+</script>
+</body>
+</html>
