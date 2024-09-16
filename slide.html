@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Card Slider</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="relative font-inter antialiased">
+
+    <main class="relative min-h-screen flex flex-col justify-center bg-slate-900 overflow-hidden">
+        <div class="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
+
+            <!-- Card slider -->
+            <section class="px-12">
+                <div class="max-w-lg mx-auto relative">
+    
+                    <input id="article-01" type="radio" name="slider" class="sr-only peer/01" >
+                    <input id="article-02" type="radio" name="slider" class="sr-only peer/02" >
+                    <input id="article-03" type="radio" name="slider" class="sr-only peer/03" checked>
+                    <input id="article-04" type="radio" name="slider" class="sr-only peer/04">
+                    <input id="article-05" type="radio" name="slider" class="sr-only peer/05">
+                  <!-- first -->
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/01:[&_article]:ring
+                        peer-focus-visible/01:[&_article]:ring-indigo-300
+                        peer-checked/01:relative
+                        peer-checked/01:z-50
+                        peer-checked/01:translate-x-0
+                        peer-checked/01:scale-100
+                        peer-checked/01:[&>label]:pointer-events-none
+                        peer-checked/02:-translate-x-20
+                        peer-checked/02:scale-[83.75%]
+                        peer-checked/02:z-40
+                        peer-checked/03:-translate-x-40
+                        peer-checked/03:z-30
+                        peer-checked/04:-translate-x-40                    
+                        peer-checked/04:opacity-0
+                        peer-checked/05:-translate-x-40
+                    ">
+                        <label class="absolute inset-0" for="article-01"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                            <header class="mb-2">
+                                <img class="inline-flex rounded-full shadow mb-3" src="https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726444800&semt=ais_hybrid" width="44" height="44" alt="Icon" />
+                                <h1 class="text-xl font-bold text-slate-900">Sarah Johnson</h1>
+                            </header>
+                            <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                                <p>
+                                    "Ataur and his team exceeded our expectations with their attention to detail and commitment to quality. Our new home is everything we dreamed of and more. Highly recommended!"
+                                </p>
+                            </div>
+                            <footer class="text-right">
+                                <a class="text-sm font-medium text-indigo-500 hover:underline" href="#0">Read more -></a>
+                            </footer>
+                        </article>
+                    </div>
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/02:[&_article]:ring
+                        peer-focus-visible/02:[&_article]:ring-indigo-300                        
+                        peer-checked/01:translate-x-20
+                        peer-checked/01:scale-[83.75%]
+                        peer-checked/01:z-40
+                        peer-checked/02:relative
+                        peer-checked/02:z-50
+                        peer-checked/02:translate-x-0
+                        peer-checked/02:scale-100
+                        peer-checked/02:[&>label]:pointer-events-none
+                        peer-checked/03:-translate-x-20
+                        peer-checked/03:scale-[83.75%]
+                        peer-checked/03:z-40
+                        peer-checked/04:-translate-x-40
+                        peer-checked/04:z-30
+                        peer-checked/05:-translate-x-40 
+                        peer-checked/05:opacity-0
+                    ">
+                        <label class="absolute inset-0" for="article-02"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                            <header class="mb-2">
+                                <img class="inline-flex rounded-full shadow mb-3" src="https://media.istockphoto.com/id/1311957094/photo/handsome-smiling-young-man-with-crossed-arms-portrait.jpg?s=612x612&w=0&k=20&c=zALF0xV8gL-W9IooXcbEE95aejQhYYkBslwjPMqlUxA=" width="44" height="44" alt="Icon" />
+                                <h1 class="text-xl font-bold text-slate-900 italic">Michael Thompson                                </h1>
+                            </header>
+                            <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                                <p>
+                                  "Working with Ataur's agency was a fantastic experience. They transformed our vision into a reality with professionalism and skill. We couldn't be happier with the results!"
+                                </p>
+                            </div>
+                            <footer class="text-right">
+                                <a class="text-sm font-medium text-indigo-500 hover:underline" href="#0">Read more -></a>
+                            </footer>
+                        </article>
+                    </div>
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/03:[&_article]:ring
+                        peer-focus-visible/03:[&_article]:ring-indigo-300                          
+                        peer-checked/01:translate-x-40
+                        peer-checked/01:z-30
+                        peer-checked/02:translate-x-20
+                        peer-checked/02:scale-[83.75%]
+                        peer-checked/02:z-40
+                        peer-checked/03:relative
+                        peer-checked/03:z-50
+                        peer-checked/03:translate-x-0
+                        peer-checked/03:scale-100
+                        peer-checked/03:[&>label]:pointer-events-none
+                        peer-checked/04:-translate-x-20
+                        peer-checked/04:scale-[83.75%]
+                        peer-checked/04:z-40
+                        peer-checked/05:-translate-x-40
+                        peer-checked/05:z-30                  
+                    ">
+                        <label class="absolute inset-0" for="article-03"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                            <header class="mb-2">
+                                <img class="inline-flex rounded-full shadow mb-3" src="./icon.svg" width="44" height="44" alt="Icon" />
+                                <h1 class="text-xl font-bold text-slate-900">Focus on the big picture</h1>
+                            </header>
+                            <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                                <p>
+                                    Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                                </p>
+                                <p>
+                                    All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                </p>
+                            </div>
+                            <footer class="text-right">
+                                <a class="text-sm font-medium text-indigo-500 hover:underline" href="#0">Read more -></a>
+                            </footer>
+                        </article>
+                    </div>
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/04:[&_article]:ring
+                        peer-focus-visible/04:[&_article]:ring-indigo-300                          
+    
+                        peer-checked/01:translate-x-40 
+                        peer-checked/01:opacity-0
+                        
+                        peer-checked/02:translate-x-40
+                        peer-checked/02:z-30
+                        
+                        peer-checked/03:translate-x-20
+                        peer-checked/03:scale-[83.75%]
+                        peer-checked/03:z-40
+    
+                        peer-checked/04:relative
+                        peer-checked/04:z-50
+                        peer-checked/04:translate-x-0
+                        peer-checked/04:scale-100
+                        peer-checked/04:[&>label]:pointer-events-none
+                        
+                        peer-checked/05:-translate-x-20
+                        peer-checked/05:scale-[83.75%]
+                        peer-checked/05:z-40
+                    ">
+                        <label class="absolute inset-0" for="article-04"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                            <header class="mb-2">
+                                <img class="inline-flex rounded-full shadow mb-3" src="./icon.svg" width="44" height="44" alt="Icon" />
+                                <h1 class="text-xl font-bold text-slate-900">Focus on the big picture</h1>
+                            </header>
+                            <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                                <p>
+                                    Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                                </p>
+                                <p>
+                                    All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                </p>
+                            </div>
+                            <footer class="text-right">
+                                <a class="text-sm font-medium text-indigo-500 hover:underline" href="#0">Read more -></a>
+                            </footer>
+                        </article>
+                    </div>  
+                    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/05:[&_article]:ring
+                        peer-focus-visible/05:[&_article]:ring-indigo-300                          
+                        peer-checked/01:translate-x-40 
+                        peer-checked/02:translate-x-40 
+                        peer-checked/02:opacity-0
+                        peer-checked/03:translate-x-40
+                        peer-checked/03:z-30
+                        peer-checked/04:translate-x-20
+                        peer-checked/04:scale-[83.75%]
+                        peer-checked/04:z-40
+                        peer-checked/05:relative
+                        peer-checked/05:z-50
+                        peer-checked/05:translate-x-0
+                        peer-checked/05:scale-100
+                        peer-checked/05:[&>label]:pointer-events-none
+                    ">
+                        <label class="absolute inset-0" for="article-05"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                            <header class="mb-2">
+                                <img class="inline-flex rounded-full shadow mb-3" src="./icon.svg" width="44" height="44" alt="Icon" />
+                                <h1 class="text-xl font-bold text-slate-900">Focus on the big picture</h1>
+                            </header>
+                            <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                                <p>
+                                    Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                                </p>
+                                <p>
+                                    All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                </p>
+                            </div>
+                            <footer class="text-right">
+                                <a class="text-sm font-medium text-indigo-500 hover:underline" href="#0">Read more -></a>
+                            </footer>
+                        </article>
+                    </div>                  
+                </div>
+            </section>
+            <!-- End: Card slider -->
+
+        </div>
+
+    </main>
+
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault(e)
+  }, false)
+</script>
+</body>
+
+</html>
